@@ -31,8 +31,6 @@ class Tournament:
 
     def arrange_tournament(self):
         for i in range(self.number_of_games):
-            print("")
-            print("Round:", i + 1)
             self.arrange_single_game()
 
         x_rounds = [i for i in range(1, len(self.player1_points) + 1)]
@@ -40,7 +38,7 @@ class Tournament:
         # y_player2_win_percentage = [sum(self.player2_points[:i]) / i for i in range(1, len(self.player2_points) + 1)]
 
         plt.plot(x_rounds, y_player1_win_percentage)
-        #plt.plot(x_rounds, y_player2_win_percentage)
+        # plt.plot(x_rounds, y_player2_win_percentage)
         plt.ylim(0, 1)
         plt.title("Win rates")
         plt.xlabel("x - Round")

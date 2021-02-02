@@ -47,8 +47,6 @@ class HistorianPlayer(Player):
             if most_common_moves[key] > number_of_common_moves:
                 number_of_common_moves = most_common_moves[key]
                 most_common_move = key
-        # print(most_common_moves)
-        # print(most_common_move)
         return Action(self.is_beaten_by[most_common_move])
 
     def receive_result(self, action):
