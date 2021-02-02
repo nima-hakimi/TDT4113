@@ -44,5 +44,3 @@ class Tournament:
         plt.xlabel("x - Round")
         plt.ylabel("y - %")
         plt.show()
-
-
