@@ -38,7 +38,7 @@ class HistorianPlayer(Player):
             if temp_list == n_last_sequence:
                 if i + len(n_last_sequence) >= len(self.history):
                     break
-                next_move = self.history[i + len(n_last_sequence) ]
+                next_move = self.history[i + len(n_last_sequence)]
                 most_common_moves[next_move] += 1
 
         most_common_move = ""
