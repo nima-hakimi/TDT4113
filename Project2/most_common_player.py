@@ -28,8 +28,6 @@ class MostCommonPlayer(Player):
             if self.previous_moves[key] > number_of_common_moves:
                 number_of_common_moves = self.previous_moves[key]
                 most_common_move = key
-        print(self.previous_moves)
-        print(most_common_move)
         return Action(self.is_beaten_by[most_common_move])
 
     def receive_result(self, action):

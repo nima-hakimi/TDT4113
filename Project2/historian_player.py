@@ -36,7 +36,18 @@ class HistorianPlayer(Player):
         for i in range(len(self.history)):
             temp_list = self.history[i:i + len(n_last_sequence)]
             if temp_list == n_last_sequence:
-                return
+                if i + len(n_last_sequence) + 1 >= len(self.history):
+                    break
+                next_move = self.history[i + len(n_last_sequence) + 1]
+                most_common_moves[next_move] += 1
+
+        most_common_move = ""
+        number_of_common_moves = -1
+        for key in most_common_moves.keys():
+            if most_common_moves[key] > number_of_common_moves:
+                number_of_common_moves = most_common_moves[key]
+                most_common_move = key
+        return Action(self.is_beaten_by[most_common_move])
 
     def receive_result(self, action):
         self.history.append[action.value]
