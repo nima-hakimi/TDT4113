@@ -26,7 +26,7 @@ def main():
 
     if player1_type == 'hist':
         player1_remember = int(input("Player 1, enter remember value!: "))
-        player1 = player1_class(player1_name, player1_remember)    
+        player1 = player1_class(player1_name, player1_remember)
     else:
         player1 = player1_class(player1_name)
 

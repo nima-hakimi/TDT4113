@@ -3,12 +3,12 @@ test
 """
 
 
-import random
 from player import Player
 from action import Action
 
 
 class SequentialPlayer(Player):
+    """ hei """
     def __init__(self, name):
         super().__init__(name)
         self.counter = 0

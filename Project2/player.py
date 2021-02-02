@@ -4,6 +4,7 @@ test
 
 
 class Player:
+    """ Super class. """
     def __init__(self, name):
         self.name = name
         self.action_map = {
@@ -14,3 +15,6 @@ class Player:
 
     def change_name(self, name):
         self.name = name
+
+    def get_name(self):
+        return self.name

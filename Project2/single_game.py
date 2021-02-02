@@ -4,6 +4,7 @@ test
 
 
 class SingleGame:
+    """ A single game. """
     def __init__(self, player1, player2):
         self.player1 = player1
         self.player2 = player2
@@ -16,7 +17,7 @@ class SingleGame:
         if action1 > action2:
             self.show_result(self.player1, action1, action2)
             return "player1"
-        elif action2 > action1:
+        if action2 > action1:
             self.show_result(self.player2, action1, action2)
             return "player2"
         self.show_result(None, action1, action2)

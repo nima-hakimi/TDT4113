@@ -3,8 +3,9 @@ test
 """
 
 
-from single_game import SingleGame
 import matplotlib.pyplot as plt
+from single_game import SingleGame
+
 
 class Tournament:
     def __init__(self, player1, player2, number_of_games):
