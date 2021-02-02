@@ -25,7 +25,7 @@ class MostCommonPlayer(Player):
                 most_common_move = key
         most_common_action = Action(most_common_move)
         beats_most_common_action = Action(most_common_action.beats[most_common_move])
-
+        return beats_most_common_action
 
     def receive_result(self, action):
         self.previous_moves[action.value] += 1
