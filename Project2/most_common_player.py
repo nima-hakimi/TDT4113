@@ -11,9 +11,9 @@ class MostCommonPlayer(Player):
     def __init__(self, name):
         super().__init__(name)
         self.previous_moves = {
-          "rock": 0,
-          "paper": 0,
-          "scissor": 0
+            "rock": 0,
+            "paper": 0,
+            "scissor": 0
         }
         self.is_beaten_by = {
             "rock": "paper",
