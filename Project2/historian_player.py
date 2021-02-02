@@ -21,9 +21,9 @@ class HistorianPlayer(Player):
 
     def select_action(self):
         most_common_moves = {
-          "rock": 0,
-          "paper": 0,
-          "scissor": 0
+            "rock": 0,
+            "paper": 0,
+            "scissor": 0
         }
         n_last_sequence = self.history[-self.remember:]
 
@@ -43,7 +43,7 @@ class HistorianPlayer(Player):
 
         most_common_move = ""
         number_of_common_moves = -1
-        for key in most_common_moves.keys():
+        for key in most_common_moves:
             if most_common_moves[key] > number_of_common_moves:
                 number_of_common_moves = most_common_moves[key]
                 most_common_move = key

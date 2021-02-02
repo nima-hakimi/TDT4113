@@ -24,7 +24,7 @@ class MostCommonPlayer(Player):
     def select_action(self):
         most_common_move = ""
         number_of_common_moves = -1
-        for key in self.previous_moves.keys():
+        for key in self.previous_moves:
             if self.previous_moves[key] > number_of_common_moves:
                 number_of_common_moves = self.previous_moves[key]
                 most_common_move = key
