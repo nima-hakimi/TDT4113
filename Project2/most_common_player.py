@@ -15,6 +15,11 @@ class MostCommonPlayer(Player):
           "paper": 0,
           "scissor": 0
         }
+        self.is_beaten_by = {
+            "rock": "paper",
+            "paper": "scissor",
+            "scissor": "rock"
+        }
 
     def select_action(self):
         most_common_move = ""
@@ -23,9 +28,9 @@ class MostCommonPlayer(Player):
             if self.previous_moves[key] > number_of_common_moves:
                 number_of_common_moves = self.previous_moves[key]
                 most_common_move = key
-        most_common_action = Action(most_common_move)
-        beats_most_common_action = Action(most_common_action.beats[most_common_move])
-        return beats_most_common_action
+        print(self.previous_moves)
+        print(most_common_move)
+        return Action(self.is_beaten_by[most_common_move])
 
     def receive_result(self, action):
         self.previous_moves[action.value] += 1
