@@ -28,5 +28,9 @@ class Tournament:
         else:
             print("arrange_single_game() went wrong")
 
+    def arrange_tournament(self):
+        for i in range(self.number_of_games):
+            self.arrange_single_game()
+
 
 

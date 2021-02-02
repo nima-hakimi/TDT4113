@@ -14,9 +14,9 @@ class SequentialPlayer(Player):
         self.counter = 0
 
     def select_action(self):
-        counter_mod_3 = counter % 3
+        counter_mod_3 = self.counter % 3
         value = self.action_map[counter_mod_3]
-        counter += 1
+        self.counter += 1
         return Action(value)
 
     def receive_result(self, action):
