@@ -4,6 +4,7 @@ test
 
 
 from single_game import SingleGame
+import matplotlib.pyplot as plt
 
 class Tournament:
     def __init__(self, player1, player2, number_of_games):
@@ -32,5 +33,16 @@ class Tournament:
         for i in range(self.number_of_games):
             self.arrange_single_game()
 
+        rounds = [i for i in range(1, len(self.player1_points) + 1)]
+        player1_win_percentage = [sum(self.player1_points[:i]) / i for i in range(1, len(self.player1_points) + 1)]
+        player2_win_percentage = [sum(self.player1_points[:i]) / i for i in range(1, len(self.player1_points) + 1)]
+
+        plt.plot(rounds, player1_win_percentage)
+        plt.plot(rounds, player2_win_percentage)
+        plt.ylim(0, 1)
+        plt.title("Win rates")
+        plt.xlabel("x - Round")
+        plt.ylabel("y - %")
+        plt.show()
 
 
