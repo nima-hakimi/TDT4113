@@ -14,6 +14,11 @@ class HistorianPlayer(Player):
         self.remember = remember
 
     def select_action(self):
+        n_last_sequence = self.history[-self.remember:]
+        for i in range(len(self.history)):
+            temp_list = self.history[i:i + len(n_last_sequence)]
+            if temp_list == n_last_sequence:
+                #Add self.history[i + len(n_last_sequence) + 1]
 
 
     def receive_result(self, action):
