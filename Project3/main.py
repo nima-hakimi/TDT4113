@@ -2,6 +2,8 @@
 Main file to run code
 """
 
+import sys
+sys.path.insert(1, '/path/to/application/app/folder')
 
 from persons import Sender, Receiver, Hacker
 from ciphers import Caesar, Multiplication, Affine, Unbreakable, RSA
@@ -9,7 +11,7 @@ from ciphers import Caesar, Multiplication, Affine, Unbreakable, RSA
 
 def verify_cipher(cipher_name, key_word=''):
     """ Main method to test ciphers """
-    # Instanciate cipher
+    # Instantiate cipher
     cipher = None
     if cipher_name == 'caesar':
         cipher = Caesar()
