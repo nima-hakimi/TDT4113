@@ -34,7 +34,7 @@ class Multiplication:
         print("Decryption key: " + str(decryption_key))
         mod_value = encryption_key * decryption_key % self._max_signs
         print("Verify inversion: %s * %s mod %s = %s " %
-            (encryption_key, decryption_key, self._max_signs, mod_value))
+              (encryption_key, decryption_key, self._max_signs, mod_value))
 
         return encryption_key, decryption_key
 
@@ -42,13 +42,11 @@ class Multiplication:
         """ Encode message with given key """
         new_word = ""
         for symbol in message:
-            #print('key:', key)
-            #print(self._starting_sign + ((ord(symbol) - self._starting_sign) * key))
             new_word += chr(self._starting_sign
-                + ((ord(symbol) - self._starting_sign) * key)
-                % self._max_signs)
+                            + ((ord(symbol) - self._starting_sign) * key)
+                            % self._max_signs)
         return new_word
-    
+
     def decode(self, encoded_message, decryption_key):
         """ Decode the encoded message with the decryption key """
         return self.encode(encoded_message, decryption_key)
