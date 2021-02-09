@@ -6,6 +6,7 @@ Caesar cipher
 import random
 
 class Caesar:
+    """ Ceasar cipher """
     def __init__(self):
         self._max_signs = 95
         self._starting_sign = 32
