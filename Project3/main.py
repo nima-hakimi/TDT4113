@@ -13,6 +13,7 @@ from ciphers.rsa import RSA
 from persons.hacker import Hacker
 
 def verify_cipher(cipher_name, key_word=''):
+    """ Main method to test ciphers """
     # Instanciate cipher
     cipher = None
     if cipher_name == 'caesar':
@@ -51,7 +52,7 @@ def verify_cipher(cipher_name, key_word=''):
     print("Sender encoded:  ", sender.encoded_message)
     print("Receiver encoded:", receiver.encoded_message)
     print("Receiver decoded:", receiver.message)
-    
+
     hack = input('\nDo you want to try and hack this message? (y/n): ')
     if hack == 'y':
         hacker = Hacker(cipher)
@@ -64,7 +65,7 @@ def verify_cipher(cipher_name, key_word=''):
 
 """ Code for user interface """
 
-ciphers = {
+CIPHER = {
     '1': 'caesar',
     '2': 'multiplication',
     '3': 'affine',
@@ -74,15 +75,15 @@ ciphers = {
 
 while True:
     print('\n')
-    for key, value in zip(ciphers.keys(), ciphers.values()):
+    for key, value in zip(CIPHER.keys(), CIPHER.values()):
         print('%s: %s' % (key, value))
 
     cipher_int = input('\nSelect cipher to verify (number): ')
-    cipher = ciphers[str(cipher_int)]
-    if cipher == 'unbreakable':
-        key_word = input('Type key word for unbreakable cipher: ')
-        verify_cipher(cipher, key_word)
+    cipher_name = CIPHER[str(cipher_int)]
+    if cipher_name == 'unbreakable':
+        key = input('Type key word for unbreakable cipher: ')
+        verify_cipher(cipher_name, key)
     else:
-        verify_cipher(cipher)
+        verify_cipher(cipher_name)
 
     input('\nHit Enter to start over...')
