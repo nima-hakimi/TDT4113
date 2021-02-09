@@ -3,8 +3,14 @@ Main file to run code
 """
 
 
-from persons import Sender, Receiver, Hacker
-from ciphers import Caesar, Multiplication, Affine, Unbreakable, RSA
+from sender import Sender
+from receiver import Receiver
+from hacker import Hacker
+from caesar import Caesar
+from multiplication import Multiplication
+from affine import Affine
+from unbreakable import Unbreakable
+from rsa import RSA
 
 
 def verify_cipher(cipher_name, key_word=''):
@@ -57,6 +63,8 @@ def verify_cipher(cipher_name, key_word=''):
             hacker.hack_affine(sender.encoded_message)
         elif cipher_name == 'unbreakable':
             hacker.hack_unbreakable(sender.encoded_message)
+        else:
+            print('No can do :P')
 
 CIPHER = {
     '1': 'caesar',
