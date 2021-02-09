@@ -3,14 +3,13 @@ Main file to run code
 """
 
 
-from persons import Sender
-from persons import Receiver
-from persons import Hacker
-from ciphers import Caesar
-from ciphers import Multiplication
-from ciphers import Affine
-from ciphers import Unbreakable
-from ciphers import RSA
+import sys
+import os
+path = os.path.dirname(__file__)
+sys.path.insert(1, path + '/persons')
+
+from persons import Sender, Receiver, Hacker
+from ciphers import Caesar, Multiplication, Affine, Unbreakable, RSA
 
 
 def verify_cipher(cipher_name, key_word=''):
