@@ -15,6 +15,7 @@ class Multiplication:
         self._starting_sign = 32
 
     def generate_keys(self):
+        """ Generates encryption and decryption key """
         encryption_key = None
 
         # Generate a random encryption key:
@@ -37,6 +38,7 @@ class Multiplication:
         return encryption_key, decryption_key
 
     def encode(self, message, key):
+        """ Encode message with given key """
         new_word = ""
         for symbol in message:
             #print('key:', key)
@@ -45,4 +47,5 @@ class Multiplication:
         return new_word
     
     def decode(self, encoded_message, decryption_key):
+        """ Decode the encoded message with the decryption key """
         return self.encode(encoded_message, decryption_key)

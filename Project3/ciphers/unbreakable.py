@@ -9,6 +9,7 @@ class Unbreakable:
     self._starting_sign = 32
 
   def generate_keys(self, key_word, no_print=False):
+    """ Generates encryption and decryption key """
     encryption_key = key_word
     decryption_key = ''
     for symbol in encryption_key:
@@ -24,6 +25,7 @@ class Unbreakable:
     return encryption_key, decryption_key
 
   def encode(self, message, key):
+    """ Encode message with given key """
     encoded_message = ""
     for i in range(len(message)):
       # - _starting_sign to make mapping start at space = 0
@@ -34,4 +36,5 @@ class Unbreakable:
     return encoded_message
   
   def decode(self, encoded_message, decryption_key):
+    """ Decode the encoded message with the decryption key """
     return self.encode(encoded_message, decryption_key)

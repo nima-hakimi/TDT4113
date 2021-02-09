@@ -9,6 +9,7 @@ from crypto_utils import text_from_blocks
 
 class RSA:
     def generate_keys(self):
+        """ Generates encryption and decryption key """
         # Number of bits needed to represent ASCII
         num_of_bits = 8
 
@@ -41,6 +42,7 @@ class RSA:
         return secret_key, public_key
 
     def encode(self, message, public_key):
+        """ Encode message with given key """
         blocks = blocks_from_text(message, 2)
 
         encoded_message = []
@@ -55,6 +57,7 @@ class RSA:
         return encoded_message
 
     def decode(self, blocks, secret_key):
+        """ Decode the encoded message with the decryption key """
         decoded_numbers = []
 
         sum_primes = secret_key[0]
