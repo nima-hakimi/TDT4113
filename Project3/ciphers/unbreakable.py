@@ -36,7 +36,7 @@ class Unbreakable:
             encoded_symbol = chr(self._starting_sign + modular_value)
             encoded_message += encoded_symbol
         return encoded_message
-    
+
     def decode(self, encoded_message, decryption_key):
         """ Decode the encoded message with the decryption key """
         return self.encode(encoded_message, decryption_key)

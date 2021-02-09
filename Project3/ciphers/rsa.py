@@ -1,10 +1,8 @@
 """ RSA """
 
+
 import random
-from crypto_utils import generate_random_prime
-from crypto_utils import modular_inverse
-from crypto_utils import blocks_from_text
-from crypto_utils import text_from_blocks
+from crypto_utils import generate_random_prime, modular_inverse, blocks_from_text, text_from_blocks
 
 
 class RSA:
