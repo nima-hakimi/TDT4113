@@ -51,7 +51,7 @@ def verify_cipher(cipher_name, key_word=''):
     hack = input('\nDo you want to try and hack this message? (y/n): ')
     if hack == 'y':
         hacker = Hacker(cipher)
-        if cipher_name == 'caesar' or cipher_name == 'multiplication':
+        if cipher_name in ('caesar', 'multiplication'):
             hacker.hack_caesar_or_multiplication(sender.encoded_message)
         elif cipher_name == 'affine':
             hacker.hack_affine(sender.encoded_message)
