@@ -4,24 +4,26 @@ A class to brute force crack the ciphers
 
 
 import os
-from .receiver import Receiver
+from receiver import Receiver
 
 class Hacker(Receiver):
+    """ Le Hacker class """
     def __init__(self, cipher):
-            super().__init__(cipher)
-            self.path = os.path.dirname(__file__)
+        super().__init__(cipher)
+        self.path = os.path.dirname(__file__)
 
     def hack_caesar_or_multiplication(self, encoded_message):
         """ Try to decode with every possible key """
         for key in range(1, 95):
             decoded_message = self.cipher.decode(encoded_message, key)
-            encoded_message_list = decoded_message.lower().split() 
+            encoded_message_list = decoded_message.lower().split()
             counter = 0
             try:
                 with open(self.path + "/english_words.txt", "r") as file:
                     for english_word in file.readlines():
                         english_word = english_word.strip()
-                        if english_word in encoded_message_list: counter += 1
+                        if english_word in encoded_message_list:
+                            counter += 1
                         if counter == len(encoded_message_list):
                             print('\n( ͡° ͜ʖ ͡°) YOU HAVE BEEN HACKED ( ͡° ͜ʖ ͡°)')
                             print('The hacker found a key:', key)
@@ -39,7 +41,7 @@ class Hacker(Receiver):
                 key = (i, j)
                 print('Trying key:', key)
                 decoded_message = self.cipher.decode(encoded_message, key)
-                encoded_message_list = decoded_message.lower().split() 
+                encoded_message_list = decoded_message.lower().split()
                 counter = 0
                 try:
                     with open(self.path + "/english_words.txt", "r") as file:
@@ -79,8 +81,8 @@ class Hacker(Receiver):
             decoded_message = self.cipher.decode(encoded_message, decryption_key)
             encoded_message_list = decoded_message.split()
 
-            for l in words:
-                if l in encoded_message_list:
+            for word2 in words:
+                if word2 in encoded_message_list:
                     counter += 1
             if counter == len(encoded_message_list):
                 print('\n( ͡° ͜ʖ ͡°) YOU HAVE BEEN HACKED ( ͡° ͜ʖ ͡°)')
