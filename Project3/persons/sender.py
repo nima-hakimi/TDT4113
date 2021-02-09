@@ -7,8 +7,6 @@ from person import Person
 
 class Sender(Person):
     """ The Person to decrypt and send the message to a receiver """
-    def __init__(self, cipher):
-        super().__init__(cipher)
 
     def operate_cipher(self, message):
         """ Perform encode """
