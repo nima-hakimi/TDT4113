@@ -11,10 +11,10 @@ class Person:
         self.message = ''
         self.encoded_message = ''
 
-    """ Updates key """
     def set_key(self, key):
+        """ Updates key """
         self._key = key
 
-    """ Retrieves key """
     def get_key(self):
+        """ Retrieves key """
         return self._key
