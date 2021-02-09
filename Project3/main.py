@@ -63,8 +63,6 @@ def verify_cipher(cipher_name, key_word=''):
         elif cipher_name == 'unbreakable':
             hacker.hack_unbreakable(sender.encoded_message)
 
-""" Code for user interface """
-
 CIPHER = {
     '1': 'caesar',
     '2': 'multiplication',
