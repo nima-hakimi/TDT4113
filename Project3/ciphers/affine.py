@@ -16,8 +16,8 @@ class Affine:
         """ Generates encryption and decryption key """
         multiplication_encrypt, multiplication_decrypt = self.multiplication.generate_keys()
         caesar_encrypt, caesar_decrypt = self.caesar.generate_keys()
-        encryption_key = (multiplication_encrypt, caesar_encrypt) # (48, 90)
-        decryption_key = (multiplication_decrypt, caesar_decrypt) # (2, 5)
+        encryption_key = (multiplication_encrypt, caesar_encrypt)  # (48, 90)
+        decryption_key = (multiplication_decrypt, caesar_decrypt)  # (2, 5)
         return encryption_key, decryption_key
 
     def encode(self, message, key):
