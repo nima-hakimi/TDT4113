@@ -1,10 +1,10 @@
 """
-test
+Action
 """
 
 
 class Action:
-    """ ruh """
+    """ Class for comparing self and other-action. """
     def __init__(self, value):
         self.value = value
         self.beats = {

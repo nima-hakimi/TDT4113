@@ -1,5 +1,5 @@
 """
-Test
+This class have a main function that runs the game.
 """
 
 
@@ -20,10 +20,13 @@ TYPE_TO_CLASS_MAP = {
 def main():
     print("Welcome to this game")
 
+    # Getting inputs from the user for player 1
     player1_name = input("Player 1, enter your name!: ")
     player1_type = input("Player 1, enter your type!: ")
     player1_class = TYPE_TO_CLASS_MAP[player1_type.lower()]
 
+    # Checks if player 1 is the type, Historian.
+    # Since Historian have an extra input.
     if player1_type == 'hist':
         player1_remember = int(input("Player 1, enter remember value!: "))
         player1 = player1_class(player1_name, player1_remember)
