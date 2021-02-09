@@ -79,11 +79,12 @@ class Hacker(Receiver):
             decryption_key = key_pair[1]
             print('Trying key:', word)
             decoded_message = self.cipher.decode(encoded_message, decryption_key)
-            encoded_message_list = decoded_message.split()
+            encoded_message_list = decoded_message.lower().split()
 
             for word2 in words:
                 if word2 in encoded_message_list:
                     counter += 1
+
             if counter == len(encoded_message_list):
                 print('\n( ͡° ͜ʖ ͡°) YOU HAVE BEEN HACKED ( ͡° ͜ʖ ͡°)')
                 print('The hacker found a key:', word)
