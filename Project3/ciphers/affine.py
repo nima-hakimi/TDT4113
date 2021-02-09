@@ -3,8 +3,8 @@ Affine cipher - A combination of Caesar and Multiplication
 """
 
 
-from .caesar import Caesar
-from .multiplication import Multiplication
+from caesar import Caesar
+from multiplication import Multiplication
 
 class Affine:
     """ Affine cipher """
