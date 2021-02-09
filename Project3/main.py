@@ -3,8 +3,8 @@ Main file to run code
 """
 
 
-from persons import Sender, Receiver, Hacker
-from ciphers import Caesar, Multiplication, Affine, Unbreakable, RSA
+from .persons import Sender, Receiver, Hacker
+from .ciphers import Caesar, Multiplication, Affine, Unbreakable, RSA
 
 
 def verify_cipher(cipher_name, key_word=''):
@@ -71,12 +71,12 @@ while True:
     for key, value in zip(CIPHER.keys(), CIPHER.values()):
         print('%s: %s' % (key, value))
 
-    cipher_int = input('\nSelect cipher to verify (number): ')
-    cipher_name = CIPHER[str(cipher_int)]
-    if cipher_name == 'unbreakable':
-        key = input('Type key word for unbreakable cipher: ')
-        verify_cipher(cipher_name, key)
+    CIPHER_INT = input('\nSelect cipher to verify (number): ')
+    CIPHER_NAME = CIPHER[str(CIPHER_INT)]
+    if CIPHER_NAME == 'unbreakable':
+        KEY = input('Type key word for unbreakable cipher: ')
+        verify_cipher(CIPHER_NAME, KEY)
     else:
-        verify_cipher(cipher_name)
+        verify_cipher(CIPHER_NAME)
 
     input('\nHit Enter to start over...')
