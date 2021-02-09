@@ -19,9 +19,9 @@ class Hacker(Receiver):
             counter = 0
             try:
                 with open(self.path + "/english_words.txt", "r") as file:
-                    for enligsh_word in file.readlines():
-                        enligsh_word = enligsh_word.strip()
-                        if enligsh_word in encoded_message_list: counter += 1
+                    for english_word in file.readlines():
+                        english_word = english_word.strip()
+                        if english_word in encoded_message_list: counter += 1
                         if counter == len(encoded_message_list):
                             print('\n( ͡° ͜ʖ ͡°) YOU HAVE BEEN HACKED ( ͡° ͜ʖ ͡°)')
                             print('The hacker found a key:', key)
@@ -43,9 +43,9 @@ class Hacker(Receiver):
                 counter = 0
                 try:
                     with open(self.path + "/english_words.txt", "r") as file:
-                        for linje in file.readlines():
-                            linje = linje.strip()
-                            if linje in encoded_message_list:
+                        for english_word in file.readlines():
+                            english_word = english_word.strip()
+                            if english_word in encoded_message_list:
                                 counter += 1
                             if counter == len(encoded_message_list):
                                 print('\n( ͡° ͜ʖ ͡°) YOU HAVE BEEN HACKED ( ͡° ͜ʖ ͡°)')
@@ -65,9 +65,9 @@ class Hacker(Receiver):
         words = []
         try:
             with open(self.path + "/english_words.txt", "r") as file:
-                for linje in file.readlines():
-                    linje = linje.strip()
-                    words.append(linje)
+                for english_word in file.readlines():
+                    english_word = english_word.strip()
+                    words.append(english_word)
         except FileNotFoundError:
             print("File not found")
 
