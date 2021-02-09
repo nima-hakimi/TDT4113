@@ -3,14 +3,9 @@ Main file to run code
 """
 
 
-from persons.sender import Sender
-from persons.receiver import Receiver
-from ciphers.caesar import Caesar
-from ciphers.multiplication import Multiplication
-from ciphers.affine import Affine
-from ciphers.unbreakable import Unbreakable
-from ciphers.rsa import RSA
-from persons.hacker import Hacker
+from persons import Sender, Receiver, Hacker
+from ciphers import Caesar, Multiplication, Affine, Unbreakable, RSA
+
 
 def verify_cipher(cipher_name, key_word=''):
     """ Main method to test ciphers """
