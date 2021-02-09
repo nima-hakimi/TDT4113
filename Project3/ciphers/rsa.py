@@ -33,7 +33,7 @@ class RSA:
 
         public_key = (prime_product, rand_num)
         secret_key = (prime_product, inverse_rand_num)
-        
+
         print('Valid key pair found!')
         print('Public key:', public_key)
         print('Secret key:', secret_key)
