@@ -3,8 +3,8 @@ Main file to run code
 """
 
 
-from Project3.persons import Sender, Receiver, Hacker
-from Project3.ciphers import Caesar, Multiplication, Affine, Unbreakable, RSA
+from persons import Sender, Receiver, Hacker
+from ciphers import Caesar, Multiplication, Affine, Unbreakable, RSA
 
 
 def verify_cipher(cipher_name, key_word=''):
