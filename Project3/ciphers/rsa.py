@@ -1,4 +1,4 @@
-"""RSA"""
+""" RSA """
 
 import random
 from crypto_utils import generate_random_prime
@@ -8,6 +8,7 @@ from crypto_utils import text_from_blocks
 
 
 class RSA:
+    """ RSA """
     def generate_keys(self):
         """ Generates encryption and decryption key """
         # Number of bits needed to represent ASCII

@@ -7,6 +7,7 @@ from .caesar import Caesar
 from .multiplication import Multiplication
 
 class Affine:
+  """ Affine cipher """
   def __init__(self):
     self.caesar = Caesar()
     self.multiplication = Multiplication()

@@ -10,6 +10,7 @@ import math
 from crypto_utils import modular_inverse
 
 class Multiplication:
+    """ Multiplication cipher """
     def __init__(self):
         self._max_signs = 95
         self._starting_sign = 32
