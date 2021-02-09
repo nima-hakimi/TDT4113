@@ -2,11 +2,15 @@
 Main file to run code
 """
 
-import sys
-sys.path.insert(1, '/path/to/application/app/folder')
 
-from persons import Sender, Receiver, Hacker
-from ciphers import Caesar, Multiplication, Affine, Unbreakable, RSA
+from persons import Sender
+from persons import Receiver
+from persons import Hacker
+from ciphers import Caesar
+from ciphers import Multiplication
+from ciphers import Affine
+from ciphers import Unbreakable
+from ciphers import RSA
 
 
 def verify_cipher(cipher_name, key_word=''):
