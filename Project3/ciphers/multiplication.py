@@ -25,7 +25,7 @@ class Multiplication:
             if math.gcd(candidate, self._max_signs) == 1:
                 encryption_key = candidate
                 break
-        
+
         # Find the decryption key for the given encryption key
         decryption_key = modular_inverse(encryption_key, self._max_signs)
 
@@ -44,7 +44,9 @@ class Multiplication:
         for symbol in message:
             #print('key:', key)
             #print(self._starting_sign + ((ord(symbol) - self._starting_sign) * key))
-            new_word += chr(self._starting_sign + ((ord(symbol) - self._starting_sign) * key) % self._max_signs)
+            new_word += chr(self._starting_sign
+                + ((ord(symbol) - self._starting_sign) * key)
+                % self._max_signs)
         return new_word
     
     def decode(self, encoded_message, decryption_key):

@@ -31,7 +31,8 @@ class Unbreakable:
     for i in range(len(message)):
       # - _starting_sign to make mapping start at space = 0
       key_value = ord(key[i % (len(key))]) - self._starting_sign
-      modular_value = (ord(message[i]) + key_value - self._starting_sign) % self._max_signs
+      modular_value = (ord(message[i])
+        + key_value - self._starting_sign) % self._max_signs
       encoded_symbol = chr(self._starting_sign + modular_value)
       encoded_message += encoded_symbol
     return encoded_message
