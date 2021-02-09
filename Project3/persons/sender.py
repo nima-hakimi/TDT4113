@@ -6,7 +6,7 @@ A person which will send (encrypt) encrypted messages
 from person import Person
 
 class Sender(Person):
-    """ The Person to decrypt and send the message to a receiver """
+    """ The Person to encrypt and send the message to a receiver """
 
     def operate_cipher(self, message):
         """ Perform encode """
