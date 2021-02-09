@@ -3,7 +3,7 @@ A person which will receive (decrypt) encrypted messages
 """
 
 
-from .person import Person
+from person import Person
 
 class Receiver(Person):
     """ The Person to receive encoded message and decrypt it """
