@@ -1,4 +1,4 @@
-""" """
+""" Defining the Stack and Queue classes, as well as unit test for both """
 
 class Container:
     """ Container superclass for Queue and Stack """
@@ -50,6 +50,9 @@ def test():
     # Stack
     stack = Stack()
     assert stack.is_empty(), "stack.is_empty() did not work as expected"
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
     assert stack._items == [1, 2, 3], "stack._items was not as expected."
     assert stack.pop() == 3, "stack.pop() did not work as expected."
     assert stack.peek() == 2, "stack.peek() did not work as expected"
@@ -65,3 +68,7 @@ def test():
     assert queue.pop() == 1, "queue.pop() did not work as expected."
     assert queue.peek() == 2, "queue.peek() did not work as expected"
     assert queue.size() == 2, "queue.size() failed."
+
+    print('Stack and Queue works as expected')
+
+# test()
