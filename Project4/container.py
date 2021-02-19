@@ -54,6 +54,7 @@ class Stack(Container):
 
 def test():
     stack = Stack():
+    assert stack.is_empty(), "stack.is_empty() did not work as expected"
     try:
         stack.pop()
         raise Exception("stack.pop() should have failed"):
@@ -66,3 +67,18 @@ def test():
     assert stack.pop() == 3, "stack.pop() did not work as expected."
     assert stack.peek() == 2, "stack.peek() did not work as expected"
     assert stack.size() == 2, "stack.size() failed."
+    
+    queue = Queue():
+    assert queue.is_empty(), "queue.is_empty() did not work as expected"
+    try:
+        queue.pop()
+        raise Exception("queue.pop() should have failed"):
+    except:
+        pass
+    queue.push(1)
+    queue.push(2)
+    queue.push(3)
+    assert queue._items == [1, 2, 3], "queue._items was not as expected."
+    assert queue.pop() == 1, "queue.pop() did not work as expected."
+    assert queue.peek() == 2, "queue.peek() did not work as expected"
+    assert queue.size() == 2, "queue.size() failed."
