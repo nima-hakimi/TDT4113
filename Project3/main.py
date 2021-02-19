@@ -45,7 +45,7 @@ def verify_cipher(cipher_name, key_word=''):
     receiver.set_key(decryption_key)
 
     # Create message and send it
-    message = "Abyssal encounter"
+    message = "Hello world"
     # message = "aaaaaaaaaaa"
     sender.send(message, receiver)
 
