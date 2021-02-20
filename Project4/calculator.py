@@ -23,6 +23,7 @@ class Calculator:
                           'MINUS': Operator(numpy.subtract, 0)}
 
         self.output_queue = Queue()
+        self.input_queue = Queue()
 
     def evaluate(self):
         """
@@ -54,14 +55,40 @@ class Calculator:
         """
         ...
         """
+        operator_stack = Stack()
+        for i in range(self.input_queue.size()):
+            element = self.input_queue.pop()
+            if isinstance(element, numbers.Number):
+                self.output_queue.push(element)
+            elif isinstance(element, Function):
+                operator_stack.push(element)
+            elif element == "(":
+                operator_stack.push(element)
+            elif element == ")":
+                while operator_stack.peek() != "(":
+                    self.output_queue.push(operator_stack.pop())
+                operator_stack.pop()
+            elif isinstance(element, Operator):
+                while operator_stack.size() != 0:
+                    next_element = operator_stack.peek()
+                    if isinstance(next_element, Operator):
+                        if next_element.strength < element.strength:
+                            break
+                    elif next_element == "(":
+                        break
+                    self.output_queue.push(operator_stack.pop())
+                operator_stack.push(element)
+            else:
+                raise Exception("Wrong type in input queue")
 
-        pass
+        for i in range(self.output_queue.size()):
+            self.output_queue.push(operator_stack.pop())
 
     def text_parser(self):
         """
         ...
         """
-        pass
+
 
     def calculate(self):
         """
