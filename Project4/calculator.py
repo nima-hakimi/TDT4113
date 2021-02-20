@@ -28,12 +28,33 @@ class Calculator:
         """
         ...
         """
-        pass
+        stack = Stack()
+        for i in range(self.output_queue.size()):
+            element = self.output_queue.pop()
+            if isinstance(element, numbers.Number):
+                stack.push(element)
+            elif isinstance(element, Function):
+                num = stack.pop()
+                calculated_value = element.execute(num)
+                stack.push(calculated_value)
+            elif isinstance(element, Operator):
+                num1 = stack.pop()
+                num2 = stack.pop()
+                calculated_value = element.execute(num1, num2)
+                stack.push(calculated_value)
+            else:
+                raise Exception("Wrong type in the output_queue")
+
+        if stack.size() != 1:
+            raise Exception("Stack should be of size 1.")
+
+        return stack.pop()
 
     def convert_queue_to_rpn(self):
         """
         ...
         """
+
         pass
 
     def text_parser(self):
