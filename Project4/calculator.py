@@ -122,12 +122,13 @@ class Calculator:
 
         return self.input_queue
     
-    def calculate(self):
+    def calculate(self, input_str):
         """
         Put everything together
         """
-        pass
-
+        self.text_parser(input_str)
+        self.convert_queue_to_rpn()
+        return self.evaluate()
 
 def test_basics():
     calc = Calculator()
