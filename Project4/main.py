@@ -5,9 +5,8 @@ Test
 
 from calculator import Calculator
 
-calc_str = input("What do you want to calculate?: ")
+CALC_STR = input("What do you want to calculate?: ")
 
-calc = Calculator()
+CALC = Calculator()
 
-print(calc.calculate(calc_str))
-
+print(CALC.calculate(CALC_STR))
